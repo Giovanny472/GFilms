@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Джованни Цветов -->
+    <color name="colorPrimaryDark">#444e59</color>
+    <color name="colorAccent">#444e59</color>
+    <color name="colorPrimary">#505a64</color>
+
+    <color name="colorFondoDark">#444e59</color>
+    <color name="colorFondoClaro">#505a64</color>
+    <color name="colorVerde">#64c800</color>
+    <color name="colorNaranja">#ff6400</color>
+    <color name="colorAmarillo">#c8c800</color>
+</resources>
