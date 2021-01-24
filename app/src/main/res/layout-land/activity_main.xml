@@ -5,18 +5,76 @@
     android:layout_height="match_parent"
     android:background="@color/colorFondoDark">
 
-    <LinearLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <fragment
-            android:id="@+id/details_fragment"
-            android:name="ru.giovanny.gfilms.FragmentForFilm"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="128dp" />
-
-
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <fragment
+                android:id="@+id/details_fragment1"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment2"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment3"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment4"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment5"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment6"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment7"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment8"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment9"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment10"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment11"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+            <fragment
+                android:id="@+id/details_fragment12"
+                android:name="ru.giovanny.gfilms.FragmentForFilm"
+                android:layout_width="match_parent"
+                android:layout_height="128dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

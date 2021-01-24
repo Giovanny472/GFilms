@@ -22,24 +22,17 @@ class MainActivity : AppCompatActivity() {
     // создание данных
     FGFilms = FFactoryGFilms.Make()
 
-    if (savedInstanceState == null) {
+    for (Iter in 0.. FGFilms.count() ) {
 
-      for (Iter in 0.. FGFilms.count() ) {
+      var fm = getSupportFragmentManager()
+      var aGFilm = FGFilms.item(Iter)
 
-        var fm = getSupportFragmentManager()
-        var aGFilm = FGFilms.item(Iter)
-
-        //var aFrg: FragmentForFilm ? =  supportFragmentManager.findFragmentById( R.id.details_fragment1)
-        var afrg:FragmentForFilm = fm.findFragmentById( aGFilm.id() ) as FragmentForFilm
-        afrg.nameFilm.text = aGFilm.name()
-        afrg.imgFilm.setImageResource(  aGFilm.image() )
-        afrg.descriptionFilm.text = aGFilm.description().substring(50) + "..."
-      }
-
+      //var aFrg: FragmentForFilm ? =  supportFragmentManager.findFragmentById( R.id.details_fragment1)
+      var afrg:FragmentForFilm = fm.findFragmentById( aGFilm.id() ) as FragmentForFilm
+      afrg.nameFilm.text = aGFilm.name()
+      afrg.imgFilm.setImageResource(  aGFilm.image() )
+      afrg.descriptionFilm.text = aGFilm.description().substring(50) + "..."
     }
-
   }
-
-
 
 }
