@@ -2,6 +2,7 @@ package ru.giovanny.gfilms
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.fragment_for_film.*
 
@@ -24,14 +25,17 @@ class MainActivity : AppCompatActivity() {
 
     for (Iter in 0.. FGFilms.count() ) {
 
-      var fm = getSupportFragmentManager()
-      var aGFilm = FGFilms.item(Iter)
+      val fm = getSupportFragmentManager()
+      val aGFilm = FGFilms.item(Iter)
 
       //var aFrg: FragmentForFilm ? =  supportFragmentManager.findFragmentById( R.id.details_fragment1)
       var afrg:FragmentForFilm = fm.findFragmentById( aGFilm.id() ) as FragmentForFilm
       afrg.nameFilm.text = aGFilm.name()
       afrg.imgFilm.setImageResource(  aGFilm.image() )
       afrg.descriptionFilm.text = aGFilm.description().substring(50) + "..."
+
+
+
     }
   }
 

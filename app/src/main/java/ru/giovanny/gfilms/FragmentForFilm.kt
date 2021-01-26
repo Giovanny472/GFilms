@@ -1,10 +1,20 @@
 package ru.giovanny.gfilms
 
+import android.content.Context
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_for_film.*
+import kotlinx.android.synthetic.main.fragment_for_film.view.*
+import kotlin.jvm.java as java
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +31,8 @@ class FragmentForFilm : Fragment() {
   private var param1: String? = null
   private var param2: String? = null
 
+  private lateinit var aView: View
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     arguments?.let {
@@ -29,12 +41,35 @@ class FragmentForFilm : Fragment() {
     }
   }
 
-  override fun onCreateView(
-    inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View? {
-    // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_for_film, container, false)
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                            savedInstanceState: Bundle?): View? {
+
+
+    aView  = inflater!!.inflate(R.layout.fragment_for_film, container, false)
+
+    savedInstanceState?.getInt("COLOR_NAME_FILM")?.let {
+      aView.nameFilm.setBackgroundColor( it )
+    }
+
+    aView.btnMore.setOnClickListener { view ->
+      aView.nameFilm.setBackgroundColor(  Color.YELLOW )
+
+      activity?.let{
+        val aIntentDetailFilm = Intent (it, DetailFilm::class.java)
+        it.startActivity(aIntentDetailFilm)
+      }
+    }
+
+    // Return the fragment view/layout
+    return aView
+  }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+
+    val aDraw : Drawable = aView.nameFilm.background
+    val aColor : Int = (aDraw as ColorDrawable).color
+    outState.putInt("COLOR_NAME_FILM", aColor)
   }
 
   companion object {
