@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
       var afrg:FragmentForFilm = fm.findFragmentById( aGFilm.id() ) as FragmentForFilm
       afrg.nameFilm.text = aGFilm.name()
       afrg.imgFilm.setImageResource(  aGFilm.image() )
-      afrg.descriptionFilm.text = aGFilm.description().substring(50) + "..."
+      afrg.descriptionFilm.text = aGFilm.description()
 
 
 

@@ -56,6 +56,10 @@ class FragmentForFilm : Fragment() {
 
       activity?.let{
         val aIntentDetailFilm = Intent (it, DetailFilm::class.java)
+        aIntentDetailFilm.putExtra("TITLE_SECOND_ACT", aView.nameFilm.text)
+        aIntentDetailFilm.putExtra("DESCRIP_SECOND_ACT", aView.descriptionFilm.text)
+        //aIntentDetailFilm.putExtra("IMAG_SECOND_ACT")
+
         it.startActivity(aIntentDetailFilm)
       }
     }

@@ -19,11 +19,13 @@
 
     <TextView
         android:id="@+id/textViewNameFilm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:text="название фильма"
-        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,11 +33,12 @@
 
     <TextView
         android:id="@+id/textViewDescripFilm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="252dp"
+        android:layout_height="244dp"
         android:layout_marginTop="56dp"
         android:text="описание"
         android:textSize="20dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
