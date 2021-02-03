@@ -2,6 +2,7 @@ package ru.giovanny.gfilms
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.fragment_for_film.*
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
       var afrg:FragmentForFilm = fm.findFragmentById( aGFilm.id() ) as FragmentForFilm
       afrg.nameFilm.text = aGFilm.name()
       afrg.imgFilm.setImageResource(  aGFilm.image() )
+      afrg.imgFilm.tag = aGFilm.id()
       afrg.descriptionFilm.text = aGFilm.description()
 
 
