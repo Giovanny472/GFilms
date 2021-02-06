@@ -4,11 +4,13 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_for_film.*
 import kotlinx.android.synthetic.main.fragment_for_film.view.*
@@ -60,6 +62,28 @@ class FragmentForFilm : Fragment() {
         aIntentDetailFilm.putExtra("IMAG_SECOND_ACT", aView.imgFilm.tag.toString())
 
         it.startActivity(aIntentDetailFilm)
+      }
+    }
+
+    aView.btnShare.setOnClickListener {
+
+
+        val mailIntent = Intent(Intent.ACTION_SEND)
+        mailIntent.data = Uri.parse("mailto:")
+        mailIntent.type = "text/plain"
+
+        // название фильма
+        mailIntent.putExtra(Intent.EXTRA_SUBJECT,  aView.nameFilm.text)
+        // описание фильма
+        mailIntent.putExtra(Intent.EXTRA_TEXT, aView.descriptionFilm.text)
+
+        try {
+          startActivity(Intent.createChooser(mailIntent, "Выбираете Email приложение..."))
+        }
+        catch (e: Exception){
+          Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
+
+
       }
     }
 
